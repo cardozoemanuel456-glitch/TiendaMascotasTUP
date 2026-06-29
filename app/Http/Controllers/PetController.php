@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PetController extends Controller
 {
     // Método para obtener datos y paginarlos 
-    public function index() 
+    public function index(Request $request) 
     { 
        // 1. Iniciamos el constructor de consultas de Eloquent
         $query = Pet::query();
