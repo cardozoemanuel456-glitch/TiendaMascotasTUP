@@ -3,6 +3,28 @@
 @section('title', 'Listado de Mascotas')
 
 @section('content')
+<!-- Barra de Búsqueda por Especie -->
+<div class="bg-white rounded-xl shadow p-4 mb-6 border border-gray-100">
+    <form method="GET" action="{{ route('pets.index') }}" class="flex gap-3 items-center">
+        <label class="font-semibold text-slate-800 shrink-0">Filtrar: </label>
+        
+        <input
+            type="text"
+            name="buscar"
+            placeholder="Especie (Ej. Gato)"
+            value="{{ request('buscar') }}"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
+        >
+        
+        <button type="submit" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg transition text-sm font-medium">
+            Buscar
+        </button>
+        
+        <a href="{{ route('pets.index') }}" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition text-sm font-medium text-center">
+            Limpiar
+        </a>
+    </form>
+</div>
 <div class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
     
     <!-- Encabezado -->
