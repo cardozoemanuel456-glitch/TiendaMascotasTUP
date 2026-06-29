@@ -32,7 +32,7 @@
        <h2 class="text-2xl font-bold text-purple-600 tracking-tight">
         <i class="fa-solid fa-paw"></i> Directorio de Mascotas
         </h2>
-        <a href="{{ route('pets.create') }}" class="bg-purple-400 hover:bg-purple-750 text-white font-medium px-4 py-2 rounded-xl text-sm transition-colors shadow-sm">
+        <a href="{{ route('pets.create') }}" class="bg-purple-600 hover:bg-purple-700 text-white font-medium px-4 py-2 rounded-xl text-sm transition-colors shadow-sm">
         <i class="fa-solid fa-plus"></i> Registrar Nueva Mascota
         </a>
     </div>
