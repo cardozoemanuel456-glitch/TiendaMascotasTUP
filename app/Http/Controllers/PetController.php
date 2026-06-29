@@ -10,7 +10,18 @@ class PetController extends Controller
     // Método para obtener datos y paginarlos 
     public function index() 
     { 
-        $pets = Pet::latest()->paginate(5); 
+       // 1. Iniciamos el constructor de consultas de Eloquent
+        $query = Pet::query();
+
+        // 2. Comprobamos si el usuario ingresó una especie a buscar en el input
+        if ($request->has('buscar') && !empty($request->buscar)) {
+            $query->where('species', 'LIKE', '%' . $request->buscar . '%');
+        }
+
+        // 3. Pagina de a 5 elementos, ordena por los más nuevos y anexa los parámetros de la URL
+        $pets = $query->latest()->paginate(5)->appends($request->query());
+
+        // 4. Retornamos la vista compactando la variable corregida
         return view('pets.index', compact('pets')); 
     } 
  
